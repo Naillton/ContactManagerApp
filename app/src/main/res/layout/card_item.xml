@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Adcionando dataBinding ao nosso cardView e modificando propriedades do cardView-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@color/purple_700"
+        android:layout_marginVertical="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/contactNTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:paddingVertical="20dp"
+                android:paddingHorizontal="20dp"
+                />
+
+            <TextView
+                android:id="@+id/contactETV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="20dp"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

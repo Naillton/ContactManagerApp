@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="userViewModel"
+            type="com.example.contactmanagerapp.viewModel.UserViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_background"
+        tools:context=".MainActivity">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+            <EditText
+                android:text="@={userViewModel.inputName}"
+                android:id="@+id/edt1"
+                android:layout_width="190dp"
+                android:layout_height="57dp"
+                android:hint="@string/enter_your_contact_name"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:autofillHints="name"
+                android:inputType="text"
+                />
+            <EditText
+                android:text="@={userViewModel.inputEmail}"
+                android:id="@+id/edt2"
+                android:layout_width="190dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="24dp"
+                android:hint="@string/enter_contact_email"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt1"
+                android:autofillHints="emailAddress"
+                android:inputType="textEmailAddress"
+                />
+            <Button
+                android:id="@+id/btnSave"
+                android:onClick="@{() -> userViewModel.save()}"
+                android:layout_width="97dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/save"
+                android:backgroundTint="@color/purple_700"
+                android:textAllCaps="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.835"
+                app:layout_constraintStart_toEndOf="@+id/edt1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnDel"
+                android:onClick="@{() -> userViewModel.clearAllorDelete()}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="@string/delete"
+                android:backgroundTint="@color/purple_700"
+                android:textAllCaps="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.844"
+                app:layout_constraintStart_toEndOf="@+id/edt2"
+                app:layout_constraintTop_toBottomOf="@+id/btnSave" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraint2"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

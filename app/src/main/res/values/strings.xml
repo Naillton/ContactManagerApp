@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ContactsManagerApp</string>
+    <string name="delete">delete</string>
+    <string name="save">save</string>
+    <string name="enter_contact_email">Enter Contact Email</string>
+    <string name="enter_your_contact_name">Enter Contact Name</string>
+</resources>
